@@ -104,6 +104,16 @@ h1{
       top: 140px;
       left: 200px;
   }
+
+  #blue-area {
+    width: 37px;
+    height: 50px;
+    margin-left: 545px; /*<--- important dont remove that*/
+   background:  rgba(0,0,0,0.5); /* to make the hitbox dissapear [like in the website demo], you make it transparent like this [background:  rgba(0,0,0,0.0);] */
+    position: relative;
+    top: 140px;
+    left: 200px;
+}
    }
    
 /* this is the area where the booth interaction takes place....here ill display the hitbox - Anas */
@@ -116,3 +126,12 @@ h1{
        left: 200px;
    }
  
+   #blue-area {
+    width: 37px;
+    height: 50px;
+   background:  rgba(0,0,0,0.5); /* to make the hitbox dissapear [like in the website demo], you make it transparent like this [background:  rgba(0,0,0,0.0);] */
+    position: relative;
+    top: 140px;
+    left: 200px;
+}
+

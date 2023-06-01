@@ -29,6 +29,12 @@ function Demo() {
           setX((prevX) => prevX += 5);
           setY((prevY) => prevY += 3.3);
           break ; 
+          case 'ArrowUp' : 
+          setY((prevY) => prevY -= 3.3);
+           break ; 
+           case 'ArrowDown' : 
+          setY((prevY) => prevY += 3.3);
+          break ; 
         
        default :
       break; 
@@ -36,7 +42,7 @@ function Demo() {
 
     let playerRect = document.getElementById('player').getBoundingClientRect();
     let redAreaRect = document.getElementById('red-area').getBoundingClientRect();
-    
+    let blueAreaRect = document.getElementById('blue-area').getBoundingClientRect();
 
     // // Player restrictions
     if (playerRect.y < 176 || playerRect.y > 435) {
@@ -53,11 +59,17 @@ function Demo() {
       playerRect.x + playerRect.width > redAreaRect.x &&
       playerRect.y < redAreaRect.y + redAreaRect.height &&
       playerRect.y + playerRect.height > redAreaRect.y
+    ||
+      playerRect.x < blueAreaRect.x + blueAreaRect.width &&
+      playerRect.x + playerRect.width > blueAreaRect.x &&
+      playerRect.y < blueAreaRect.y + blueAreaRect.height &&
+      playerRect.y + playerRect.height > blueAreaRect.y
     ) {
       setShowWindow(true);
     } else {
       setShowWindow(false);
     }
+
 
 
     
@@ -85,6 +97,9 @@ function Demo() {
       </div>
       <div id="red-area" style={{ position: 'relative', top: 140, left: 170 }}>
         <img src={Isometric_cube3} alt="Booth" />
+      </div>
+      <div id="blue-area" style={{ position: 'relative', top: 140, left: 170 }}>
+        <img src={Isometric_cube2} alt="Booth" />
       </div>
       < img src={newbackground} id="test" alt="Isometric venue" style={{ width: 450 , height: 250}} />
   
