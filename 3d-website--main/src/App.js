@@ -1,17 +1,26 @@
 import React, { useState , useEffect } from 'react';
 
-import guy from './assets/guy.png';
-import Isometric_cube3 from './assets/Isometric_cube3.png';
-import Isometric_cube2 from './assets/Isometric_cube3.png';
+import guy from './assets/ufo.png';
+import Isometric_cube3 from './assets/Portal.png';
+import Isometric_cube2 from './assets/Portal.png';
+import Isometric_cube1 from './assets/Portal.png';
 import wallpaper from './assets/wallpaper.jpg';
-import newbackground from './assets/newbackground.png';
+import newbackground from './assets/bg.png';
 import Navbar from './components/Navbar';
+import Scrolldown from './components/Scrolldown';
 import Products from './components/Products';
 import Virtualshop from './components/Virtualshop';
+import helipad from './assets/helipad.png';
+import floatarea from './assets/floatarea.png';
+import up from './assets/und.png';
+import down from './assets/und.png';
+import left from './assets/lnr.png';
+import right from './assets/lnr.png';
+import planet from './assets/planet03.png';
 
 function Demo() {
-  const [x, setX] = useState(31);
-  const [y, setY] = useState(55);
+  const [x, setX] = useState(250);
+  const [y, setY] = useState(276);
   const [showWindow, setShowWindow] = useState(false);
  
 
@@ -21,18 +30,28 @@ function Demo() {
   const handleKeyDown = (event) => {
         switch(event.key)
         {
-          case 'ArrowLeft' : 
+          case 'A' : 
           setX((prevX) => prevX -= 5 );
+           break ; 
+           case 'D' : 
+          setX((prevX) => prevX += 5);
+          break ; 
+          case 'W' : 
           setY((prevY) => prevY -= 3.3);
            break ; 
-           case 'ArrowRight' : 
-          setX((prevX) => prevX += 5);
+           case 'S' : 
           setY((prevY) => prevY += 3.3);
           break ; 
-          case 'ArrowUp' : 
+          case 'a' : 
+          setX((prevX) => prevX -= 5 );
+           break ; 
+           case 'd' : 
+          setX((prevX) => prevX += 5);
+          break ; 
+          case 'w' : 
           setY((prevY) => prevY -= 3.3);
            break ; 
-           case 'ArrowDown' : 
+           case 's' : 
           setY((prevY) => prevY += 3.3);
           break ; 
         
@@ -43,13 +62,35 @@ function Demo() {
     let playerRect = document.getElementById('player').getBoundingClientRect();
     let redAreaRect = document.getElementById('red-area').getBoundingClientRect();
     let blueAreaRect = document.getElementById('blue-area').getBoundingClientRect();
+    let greenAreaRect = document.getElementById('green-area').getBoundingClientRect();
+    let rightAreaRect = document.getElementById('right-area').getBoundingClientRect();
+    let leftAreaRect = document.getElementById('left-area').getBoundingClientRect();
+    let topAreaRect = document.getElementById('top-area').getBoundingClientRect();
+    let bottomAreaRect = document.getElementById('bottom-area').getBoundingClientRect();
 
     // // Player restrictions
-    if (playerRect.y < 176 || playerRect.y > 435) {
-      setX(31);
-      setY(55);
+    if (playerRect.x < leftAreaRect.x ) {
+      setX(-250);
+     
       }
 
+
+    if (playerRect.x > rightAreaRect.x ) {
+        setX(250);
+       
+      }
+      
+      if (playerRect.y < topAreaRect.y ) {
+        setY(176);
+    
+       
+      }
+
+      if (playerRect.y > bottomAreaRect.y ) {
+        setY(376);
+    
+       
+      }
      
 
     
@@ -64,6 +105,11 @@ function Demo() {
       playerRect.x + playerRect.width > blueAreaRect.x &&
       playerRect.y < blueAreaRect.y + blueAreaRect.height &&
       playerRect.y + playerRect.height > blueAreaRect.y
+    ||
+      playerRect.x < greenAreaRect.x + greenAreaRect.width &&
+      playerRect.x + playerRect.width > greenAreaRect.x &&
+      playerRect.y < greenAreaRect.y + greenAreaRect.height &&
+      playerRect.y + playerRect.height > greenAreaRect.y
     ) {
       setShowWindow(true);
     } else {
@@ -87,26 +133,33 @@ function Demo() {
   return (
    <>
    <Navbar />
-      <h1>Welcome to 3D virtual Website </h1>
-      
-        
-    
+   <br></br>
+   <br></br>
+      <h1>2023 Virtual Consumer Tech Product Expo </h1>
+      <div class="space"></div>
      <div className='text-center container-fluid'  style={{position:'relative'}}>
+     < img src={floatarea} id="floatarea" style={{ position: 'relative', top: 625, left: 165 }}/>
+     < img src={floatarea} id="floatarea" style={{ position: 'relative', top: 425, left: -15 }}/>
+     < img src={floatarea} id="floatarea" style={{ position: 'relative', top: 405, left: 165 }}/>
+     < img src={floatarea} id="floatarea" style={{ position: 'relative', top: 545, left: -65 }}/>
+      <div id="red-area" style={{ position: 'relative', top: 240, left: -10 }}>
+        <img src={Isometric_cube3} alt="Booth" />
+      </div>
+      <div id="blue-area" style={{ position: 'relative', top: 340, left: 170 }}>
+        <img src={Isometric_cube2} alt="Booth" />
+      </div>
+      <div id="green-area" style={{ position: 'relative', top:370, left: -60 }}>
+        <img src={Isometric_cube1} alt="Booth" />
+      </div>
       <div id="player" style={{ top: y, left: x }}>
         <img src={guy} alt="Player" />
       </div>
-      <div id="red-area" style={{ position: 'relative', top: 140, left: 170 }}>
-        <img src={Isometric_cube3} alt="Booth" />
+      < img src={helipad} id="heli" alt="helipad" style={{ position: 'relative', top: 70, left: 165 }}/>
+      < img src={up} id="top-area" style={{ position: 'relative', top: -126, left: 10 }}/>
+      < img src={down} id="bottom-area" style={{ position: 'relative', top: 414, left: 10 }}/>
+      < img src={left} id="left-area" style={{ position: 'relative', top: -91, left: -520 }}/>
+      < img src={right} id="right-area" style={{ position: 'relative', top: -501, left: 549 }}/>
       </div>
-      <div id="blue-area" style={{ position: 'relative', top: 140, left: 170 }}>
-        <img src={Isometric_cube2} alt="Booth" />
-      </div>
-      < img src={newbackground} id="test" alt="Isometric venue" style={{ width: 450 , height: 250}} />
-  
-  
-      
-      </div>
-
       {showWindow && <Virtualshop /> }
       <br />
       <br />

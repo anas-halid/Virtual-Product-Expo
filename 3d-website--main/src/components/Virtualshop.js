@@ -10,9 +10,6 @@ function Virtualshop() {
       <li id ="menu"><a href="">"View Products/Services"</a></li>
       <li id ="menu"><a href="">"Live Demo"</a></li>
       <li id ="menu"><a href="">"Live Chat"</a></li>
-
-
-
     </ul>
     </div>
   )
