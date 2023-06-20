@@ -12,7 +12,7 @@ import up from './assets/und.png';
 import down from './assets/und.png';
 import left from './assets/lnr.png';
 import right from './assets/lnr.png';
-
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
@@ -171,7 +171,12 @@ function Demo() {
       < img src={left} id="left-area" style={{ position: 'relative', top: -91, left: -520 }}/>
       < img src={right} id="right-area" style={{ position: 'relative', top: -501, left: 549 }}/>
       </div>
+
+     
+
+  
       {showWindow && <Virtualshop /> }
+     
       <br />
       <br />
       <br />

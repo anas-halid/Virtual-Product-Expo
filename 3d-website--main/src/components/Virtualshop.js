@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { Routes, Route, NavLink, Navigate } from 'react-router-dom';
 import Toastify from 'toastify-js';
 import "toastify-js/src/toastify.css"
 import Productvideo from './productvideo';
 import Productservices from './productservices';
 import Livechat from './livechat';
 import Livedemo from './livedemo';
+import Home from './home';
+import Route from "./Route";
+
 
 // hold it for now, need to see how the toast notification would work - Anas
 function sleep(milliseconds) {
@@ -15,7 +17,6 @@ function sleep(milliseconds) {
     currentDate = Date.now();
   } while (currentDate - date < milliseconds);
 }
-
 
 
 
@@ -36,26 +37,27 @@ function sleep(milliseconds) {
   
     myToast.showToast(1);
   
-    return (
-      <div>
-      <h2 className="mb-3">React Redirect to Page with Navigate API Example</h2>
-      <nav>
-      <ul style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', listStyle: 'none', padding: 10 , backgroundColor: 'green'}}></ul>
-      <ul>
-      <li id = 'menu'><b> <NavLink to="/productservices">Product Services</NavLink></b></li>
-       <li id = 'menu'><b> <NavLink to="/productvideo">Product Video</NavLink></b></li>
-       <li id = 'menu'><b><NavLink to="/livechat">Live Chat</NavLink></b></li>
-       <li id = 'menu'><b><NavLink to="/livedemo">Live Demo</NavLink></b></li>
-      </ul>
-      </nav>
-      <Routes>
-        <Route path="/productservices" element={<Productservices />} />
-        <Route path="/productvideo" element={<Productvideo />} />
-        <Route path="/livechat" element={<Livechat />} />
-        <Route path="/livedemo" element={<Livedemo />} />
-      </Routes>
+  
+  return (
+  
+    <div>
+    <h1 className="mb-3">Welcome to the ### portal booth</h1>
+    <nav>
+    <ul style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', listStyle: 'none', padding: 10 , backgroundColor: 'green'}}></ul>
+    
+    <ul>
+      <li id = 'menu'><b> <Route path to="/productservices">Product Services</Route><Productservices /></b></li>
+       <li id = 'menu'><b> <Route path to="/productvideo">Product Video</Route><Productvideo /></b></li>
+       <li id = 'menu'><b><Route path to="/livechat">Live Chat</Route><Livechat /></b></li>
+       <li id = 'menu'><b><Route path to="/livedemo">Live Demo</Route><Livedemo /></b></li>
+       </ul>
+     
+
+    </nav>
+
+
     </div>
-    )
+  )
 }
 
 export default Virtualshop

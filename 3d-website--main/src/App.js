@@ -3,18 +3,18 @@ import ReactDOM from "react-dom/client";
 import Navbar from './components/Navbar';
 import { BrowserRouter } from 'react-router-dom';
 import sus from './assets/sustwo.png';
-
-const root = ReactDOM.createRoot(document.getElementById('root'))
-
-
-
-
-
+import Virtualshop from './components/Virtualshop';
+import home from './components/home';
 
 function Demo() {
   const [x, setX] = useState(250);
   const [y, setY] = useState(276);
   const [showWindow, setShowWindow] = useState(false);
+
+
+
+
+
  
 
  /* <div id= 'choose'>Pick A Destination</div> 
@@ -35,7 +35,7 @@ function Demo() {
    
    <BrowserRouter>
    <Navbar />
-   
+ 
  </BrowserRouter>,
 
       <br />
