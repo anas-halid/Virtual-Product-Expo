@@ -2,7 +2,7 @@ import React, { useState , useEffect } from 'react';
 import ReactDOM from "react-dom/client";
 import Navbar from './components/Navbar';
 import { BrowserRouter } from 'react-router-dom';
-
+import sus from './assets/sustwo.png';
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
@@ -17,15 +17,27 @@ function Demo() {
   const [showWindow, setShowWindow] = useState(false);
  
 
+ /* <div id= 'choose'>Pick A Destination</div> 
+
+
+
+ < img src={sus} id="sus" style={{ position: 'relative'}}/>    
+ <div id= 'Title'>2023<br></br> Consumer <br></br>Tech Expo </div>
  
+ 
+ 
+ */
 
   
   return (
-   <> <BrowserRouter>
+   <> 
+   
+   
+   <BrowserRouter>
    <Navbar />
+   
  </BrowserRouter>,
-     
-     
+
       <br />
       <br />
       <br />

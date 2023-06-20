@@ -24,6 +24,38 @@ width: 5px;
   
 }
 
+#sus {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  top: 200px;
+  left: 50%;
+}
+
+#choose {
+  color: white;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  top: 200px;
+  font-size: 60px;
+}
+
+#Title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  font-size: 140px;
+  position: absolute;
+  top: 650px;
+  left: 75px;
+
+}
+
 table{
   margin-left: auto;
   margin-right: auto;
