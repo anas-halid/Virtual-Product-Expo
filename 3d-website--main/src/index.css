@@ -18,6 +18,39 @@ body {
   background-color: #fff;
 }
 
+label{
+color: #fff;
+width: 5px;
+  
+}
+
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+tr{
+  background-color: #fff;
+  
+}
+
+th{
+
+  color: #000;
+}
+
+
+
+#blackwhitebg{
+background-color: #fff;
+color: #000;
+text-align: center;
+display: block;
+margin-right: auto;
+margin-left: auto;
+border-radius: 50%;
+padding: 50px;
+}
 
 .space{
   position: fixed;
